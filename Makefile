@@ -1,9 +1,17 @@
 LISP = sbcl
+ASCII = figlet
 
-# If python version requirement is not met, exit.
-ifeq (, $(shell which figlet 2>/dev/null))
-  $(error Cannot find figlet, consider installing it with your preferred package manager)
+# If requirement is not met, exit.
+ifeq (, $(shell which $(ASCII) 2>/dev/null))
+  $(error Cannot find $(ASCII), consider installing it with your preferred package manager)
 endif
+
+# If $(LISP) requirement is not met, exit.
+ifeq (, $(shell which $(LISP) 2>/dev/null))
+  $(error Cannot find $(LISP), consider installing it with your preferred package manager)
+endif
+
+
 
 
 build:
