@@ -17,9 +17,3 @@
                             (uiop:run-program (list "figlet" (string c)) :output :string))
                     (create-chart))))
     (format s "characters = (~{r\"\"\"~A\"\"\",~})" output)))
-
-
-(let* ((chars (format nil "~{~A,,~}" (mapcar #'string (create-chart)))))
-  (uiop:run-program (list "figlet" chars) :output s)
-  (print (uiop:run-program (list "figlet" chars) :output :string)))
-
