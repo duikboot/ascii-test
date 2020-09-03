@@ -11,6 +11,7 @@ def get_ascii_character(index):
 
 def get_zipped_chars(text):
     characters_list = []
+
     for i in text:
         ascii_char = get_ascii_character(index_character(i))
         characters_list.append(ascii_char.splitlines())
