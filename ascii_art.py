@@ -2,10 +2,12 @@ import characters
 
 
 def index_character(char):
+    """Return the Unicode code point for a one-character string. """
     return ord(char)
 
 
 def get_ascii_character(index):
+    """Return the ascii character of the index."""
     return characters.characters[index]
 
 
