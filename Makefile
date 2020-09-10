@@ -20,3 +20,7 @@ build:
 		--eval "(load \"generate-ascii-letters.lisp\")" \
 		--eval "(uiop:quit 0)"
 
+exe:
+	sbcl \
+	  --eval "(load \"generate-ascii-letters.lisp\")" \
+	  --eval "(sb-ext:save-lisp-and-die #p\"generate-ascii\" :toplevel #'main :executable t :compression t)"
