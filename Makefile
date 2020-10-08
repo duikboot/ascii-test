@@ -12,15 +12,11 @@ ifeq (, $(shell which $(LISP) 2>/dev/null))
 endif
 
 
-
-
 build:
 	$(LISP) \
-		--eval "(ql:quickload :uiop)" \
-		--eval "(load \"generate-ascii-letters.lisp\")" \
-		--eval "(uiop:quit 0)"
+	  --eval "(load \"generate-letters.asd\")" \
+	  --eval "(ql:quickload \"generate-letters\")" \
+	  --eval "(sb-ext:save-lisp-and-die #p\"generate-ascii\" :toplevel #'generate-letters::main :executable t :compression t)"
 
-exe:
-	sbcl \
-	  --eval "(load \"generate-ascii-letters.lisp\")" \
-	  --eval "(sb-ext:save-lisp-and-die #p\"generate-ascii\" :toplevel #'main :executable t :compression t)"
+generate:
+	./generate-letters

@@ -1,5 +1,9 @@
 (in-package :cl-user)
-(defpackage generate-ascii)
+(defpackage generate-letters
+  (:use :cl)
+  (:export :main))
+
+(in-package :generate-letters)
 
 (defun range (max &key (min 0) (step 1))
   (loop for n from min below max by step
