@@ -20,3 +20,7 @@ build:
 
 generate:
 	./generate-letters
+
+
+ascii:
+	python ascii_art.py
