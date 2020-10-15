@@ -18,14 +18,17 @@ def get_zipped_chars(text):
     return zip(*characters_list)
 
 
-def main():
-    user_text = input("Give text for ascii art: ")
-    zipped_chars = get_zipped_chars(user_text)
-
-    for lines in zipped_chars:
+def print_ascii(chars):
+    for lines in chars:
         for line in lines:
             print(line, end="")
         print()
+
+
+def main():
+    user_text = input("Give text for ascii art: ")
+    zipped_chars = get_zipped_chars(user_text)
+    print_ascii(zipped_chars)
 
 
 if __name__ == "__main__":
